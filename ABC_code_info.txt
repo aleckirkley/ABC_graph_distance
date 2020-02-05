@@ -1,0 +1,14 @@
+ABC Code!
+
+The primary class defined in the ABC_code package here is the abc class (in the ABC.py file), which allows you to create an abc object to run simulations on, adjust distance thresholds based on acceptance rate, and save results to files. The abc class depends on a few other classes, but no one will have to alter these to make contributions and test new ideas.
+
+To test that you have the correct imports and whatnot, run 'python3 test_script.py' at the appropriate folder level. This file also has detailed instructions on running your own simulations.
+
+The modules within the ABC_code folder have space at the bottom for you to add your own functions, according to whatever the provided format is. For instance, if you want to define a new distance, just add it to the distances.py file at the bottom in the correct format, and then proceed with running simulations in the usual manner with this new distance function.
+
+Hopefully, this structure will make it easy for everyone to pkay around, and we can do some cool stuff!
+
+P.S. It requires igraph, which is way better than networkx (...sorry, not sorry...) and has a sweet new update to its C core. If you have any igraph questions let me know. There's also a great package called pyintergraph that converts between igraph and networkx and graphtool, so if you want to make a hacky function that converts the graphs first before returning things that also works. Just make sure the original functions only take igraph arguments and return igraph objects. 
+
+
+
