@@ -1,3 +1,5 @@
+from ABC_code import *
+
 class ABC:
     """
     ABC simulator class
@@ -59,7 +61,7 @@ class ABC:
 
                     dist = self.distance.evaluate_unnormalized(G_prop)
 
-                    if np.log(np.random.rand()) < -self.hamiltonian(dist,eps_current,**hamiltonian_kwargs):
+                    if np.log(np.random.rand()) < -self.hamiltonian(dist,eps_current,**self.hamiltonian_kwargs):
                         proposal_results[w] = True
                     else:
                         proposal_results[w] = False
@@ -98,7 +100,7 @@ class ABC:
 
             dist = self.distance.evaluate_unnormalized(G_prop)
 
-            if np.log(np.random.rand()) < -self.hamiltonian(dist,self.eps,**hamiltonian_kwargs):
+            if np.log(np.random.rand()) < -self.hamiltonian(dist,self.eps,**self.hamiltonian_kwargs):
                 proposal_results.append(True)
                 accepted_params.append(params_prop)
             else:
@@ -119,7 +121,7 @@ class ABC:
             sampled values of that parameter
         """
         try:
-            df = pd.DataFrame.from_dict(posterior_dict)
+            df = pd.DataFrame.from_dict(self.posterior)
             df.to_csv(filepath,**save_kwargs)
         except:
             print('No posterior data to write!')
